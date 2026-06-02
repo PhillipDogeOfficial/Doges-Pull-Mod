@@ -1,4 +1,4 @@
-Wow! also yeah! 
+Wow! also yeah! its not a mod menu its a pull mod:) hope this helps!
 
 
 
