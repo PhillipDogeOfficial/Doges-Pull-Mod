@@ -1,5 +1,7 @@
-Wow! also yeah! its not a mod menu its a pull mod:) hope this helps! Also, btw click 2
-Tutorial: to open the menu, click the Y button 2x to open and 2x to close. Then, after u do that + to upgrade the speed to the pull mod, and - to lower the speed to the pull mod!
+
+Tutorial:
+to open the menu, click the Y button 2x to open and 2x to close.
+Then, after u do that + to upgrade the speed to the pull mod, and - to lower the speed to the pull mod!
 
 
 
