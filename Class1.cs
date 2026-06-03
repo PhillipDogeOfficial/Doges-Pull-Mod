@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-namespace PhillipFreecam
+namespace DogesPullMod
 {
     [BepInPlugin("com.doges.pullmod", "doges pullmod", "1.0.0")]
     public class Main : BaseUnityPlugin
