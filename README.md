@@ -1,6 +1,6 @@
 
 Tutorial:
-to open the menu, click the Y button 2x to open and 2x to close.
+to open the menu, click the primary button 2x to open and 2x to close.
 Then, after u do that + to upgrade the speed to the pull mod, and - to lower the speed to the pull mod!
 
 
