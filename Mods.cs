@@ -18,21 +18,19 @@ namespace DogesPullMod
 
         private static readonly Dictionary<bool, bool> previousTouchingGround = new Dictionary<bool, bool>()
         {
-            { true, false },   
-            { false, false }  
+            { true, false },
+            { false, false }
         };
 
         public static void PullModUpdate()
         {
             ProcessPullHand(false);
-            ProcessPullHand(true); 
+            ProcessPullHand(true);
         }
-
         public static void ProcessPullHand(bool left)
         {
             float grabValue = left ? leftGrabFloat : rightGrabFloat;
 
-       
             if (grabValue < 0.1f)
                 return;
 
@@ -54,16 +52,29 @@ namespace DogesPullMod
                 Vector3 direction = GorillaTagger.Instance.rigidbody.linearVelocity.X_Z();
                 Vector3 tangent = direction - normal * Vector3.Dot(direction, normal);
 
-   
+              
                 float strength = grabValue * (pullPower * 5f);
+                float rawMove = (direction.magnitude / GTPlayer.Instance.maxJumpSpeed * strength);
 
-                GTPlayer.Instance.transform.position +=
-                    tangent.normalized *
-                    (direction.magnitude / GTPlayer.Instance.maxJumpSpeed * strength) *
-                    (scaleWithPlayer ? GTPlayer.Instance.scale : 1f);
+               
+                Vector3 targetPos =
+                    GTPlayer.Instance.transform.position +
+                    tangent.normalized * rawMove;
+
+              
+                float lerpSpeed = 12f; 
+                Vector3 smoothPos = Vector3.Lerp(
+                    GTPlayer.Instance.transform.position,
+                    targetPos,
+                    Time.deltaTime * lerpSpeed
+                );
+
+               
+                GTPlayer.Instance.transform.position = smoothPos;
             }
 
             previousTouchingGround[left] = touchingGround;
         }
     }
 }
+
